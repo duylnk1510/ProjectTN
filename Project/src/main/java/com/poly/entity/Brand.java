@@ -33,6 +33,8 @@ public class Brand implements Serializable {
 	@Column(name = "Isdeleted")
 	Boolean isDeleted;
 	
+	String logo;
+	
 	@JsonIgnore
 	@OneToMany(mappedBy = "brand")
 	List<Product> products;

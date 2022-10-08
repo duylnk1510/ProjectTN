@@ -32,6 +32,8 @@ public class Category implements Serializable{
 	@Column(name = "Isdeleted")
 	Boolean isDeleted;
 	
+	String icon;
+	
 	@JsonIgnore
 	@OneToMany(mappedBy = "category")
 	List<Product> products;
