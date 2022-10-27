@@ -6,4 +6,6 @@ import com.poly.entity.Order;
 
 public interface OrderService {
 	List<Order> findAll();
+	
+	Order updateStatus(Order o);
 }

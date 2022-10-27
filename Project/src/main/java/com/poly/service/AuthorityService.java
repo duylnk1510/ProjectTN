@@ -6,4 +6,8 @@ import com.poly.entity.Authority;
 
 public interface AuthorityService {
 	List<Authority> findAll();
+	
+	Authority save(Authority authority);
+	
+	void delete(Integer id);
 }

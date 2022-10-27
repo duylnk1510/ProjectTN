@@ -34,6 +34,7 @@ public class Account implements Serializable{
 	
 	String email;
 	String photo;
+	String address;
 	
 	@Column(name = "Isdeleted")
 	Boolean isDeleted;

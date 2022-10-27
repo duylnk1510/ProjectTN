@@ -1,0 +1,102 @@
+<div class="main-panel">
+	<h1 style="margin-top: 20px; text-align: center;">Thông tin người
+		dùng</h1>
+	<div class="container">
+		<div class="mb-3">
+			<label for="exampleFormControlInput1" class="form-label">Username</label>
+			<input type="id" class="form-control" ng-model="form.username"
+				id="username">
+		</div>
+		<div class="mb-3">
+			<label for="exampleFormControlInput1" class="form-label">Password</label>
+			<input type="text" class="form-control" ng-model="form.password"
+				id="exampleFormControlInput1">
+		</div>
+		<div class="mb-3">
+			<label for="exampleFormControlInput1" class="form-label">Fullname</label>
+			<input type="text" class="form-control" ng-model="form.fullname"
+				id="exampleFormControlInput1">
+		</div>
+		<div class="mb-3">
+			<label for="exampleFormControlInput1" class="form-label">Phone
+				number</label> <input type="text" class="form-control"
+				ng-model="form.phoneNumber" id="exampleFormControlInput1">
+		</div>
+		<div class="mb-3">
+			<label for="exampleFormControlInput1" class="form-label">Email</label>
+			<input type="text" class="form-control" ng-model="form.email"
+				id="exampleFormControlInput1">
+		</div>
+		<div class="mb-3">
+
+			<label for="formFile" class="form-label">Ảnh</label> <input
+				class="form-control" type="file"
+				onchange="angular.element(this).scope().changeImage(this.files)"
+				type="file" id="formFile"> <img
+				ng-src="/assets/admin/ImageA/{{form.photo}}"
+				class="img-thumbnail mt-1" alt="No image">
+		</div>
+
+		<div class="mb-3">
+			<label for="exampleFormControlTextarea1" class="form-label">Địa
+				chỉ</label>
+			<textarea class="form-control" ng-model="form.address"
+				id="exampleFormControlTextarea1" rows="10" required
+				autocomplete="off"></textarea>
+		</div>
+		<div class="icon">
+			<button type="button" class="btn btn-primary" ng-click="save()">
+				<i style="margin-right: 10px;" class="fa-solid fa-plus"></i>Thêm
+			</button>
+			<button type="button" class="btn btn-warning" ng-click="update()">
+				<i style="margin-right: 10px;" class="fa-sharp fa-solid fa-wrench"></i>Cập
+				nhật
+			</button>
+			
+			<button type="button" class="btn btn-light" ng-click="clear()">
+				<i style="margin-right: 10px;"
+					class="fa-sharp fa-solid fa fa-sticky-note"></i>Clear
+			</button>
+		</div>
+	</div>
+	<!-- content-wrapper ends -->
+	<!-- partial:../../partials/_footer.html -->
+
+	<!-- partial -->
+	<div class="card mt-1">
+		<div class="card-body">
+			<h4 class="card-title">Danh sách</h4>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Username</th>
+						<th>Fullname</th>
+						<th>PhoneNumber</th>
+						<th>Email</th>
+						<th>Is Deleted</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="a in accounts">
+						<td>{{a.username}}</td>
+						<td>{{a.fullname}}</td>
+						<td>{{a.phoneNumber}}</td>
+						<td>{{a.email}}</td>
+						<td>
+							<div class="form-check form-switch" style="margin-top: 15px;">
+								<input class="form-check-input" type="checkbox"
+									ng-checked="a.isDeleted" ng-click=changeIsDel(a)> <label
+									class="form-check-label ml-0" for="flexSwitchCheckDefault">{{a.isDeleted?'On':'Off'}}</label>
+							</div>
+						</td>
+						<td>
+							<button type="button" class="btn btn-warning btn-sm" ng-click="edit(a)">Edit</button>
+				
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

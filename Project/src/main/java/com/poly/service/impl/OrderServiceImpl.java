@@ -20,4 +20,9 @@ public class OrderServiceImpl implements OrderService{
 		return orderDAO.findAll();
 	}
 
+	@Override
+	public Order updateStatus(Order o) {
+		return orderDAO.save(o);
+	}
+
 }

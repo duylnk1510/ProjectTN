@@ -6,4 +6,6 @@ import com.poly.entity.OrderDetail;
 
 public interface OrderDetailService {
 	List<OrderDetail> findAll();
+	
+	List<OrderDetail> findByid(Long id);
 }

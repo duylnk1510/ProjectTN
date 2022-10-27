@@ -20,4 +20,19 @@ public class ProductServiceImpl implements ProductService{
 		return productDAO.findAll();
 	}
 
+	@Override
+	public Product create(Product p) {
+		return productDAO.save(p);
+	}
+
+	@Override
+	public Product update(Product p) {
+		return productDAO.save(p);
+	}
+
+	@Override
+	public void delete(Integer id) {
+		productDAO.deleteById(id);
+	}
+
 }

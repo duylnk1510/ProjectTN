@@ -20,4 +20,9 @@ public class OrderDetailServiceImpl implements OrderDetailService{
 		return orderDetailDAO.findAll();
 	}
 
+	@Override
+	public List<OrderDetail> findByid(Long id) {
+		return orderDetailDAO.findByOrderId(id);
+	}
+
 }

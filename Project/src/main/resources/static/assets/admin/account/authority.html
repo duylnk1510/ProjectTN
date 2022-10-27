@@ -1,0 +1,20 @@
+<table class="table">
+	<thead>
+		<tr>
+			<th></th>
+			<th scope="col" ng-repeat="r in roles">{{r.id}}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="a in accounts">
+			<td>{{a.username}}</td>
+			<td ng-repeat="r in roles">
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" ng-checked="checkAutho(a, r)"
+						id="flexCheckDefault" ng-click="changeAutho(a,r)">
+				</div>
+			</td>
+		</tr>
+
+	</tbody>
+</table>

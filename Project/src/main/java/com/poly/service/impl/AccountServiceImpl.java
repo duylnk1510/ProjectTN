@@ -21,4 +21,19 @@ public class AccountServiceImpl implements AccountService{
 		return accountDAO.findAll();
 	}
 
+	@Override
+	public Account save(Account account) {
+		return accountDAO.save(account);
+	}
+
+	@Override
+	public Account update(Account account) {
+		return accountDAO.save(account);
+	}
+
+	@Override
+	public void delete(String username) {
+		accountDAO.deleteById(username);
+	}
+
 }

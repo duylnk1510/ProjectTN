@@ -20,4 +20,14 @@ public class AuthorityServiceImpl implements AuthorityService{
 		return authorityDAO.findAll();
 	}
 
+	@Override
+	public Authority save(Authority authority) {
+		return authorityDAO.save(authority);
+	}
+
+	@Override
+	public void delete(Integer id) {
+		authorityDAO.deleteById(id);
+	}
+
 }
